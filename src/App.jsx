@@ -20,6 +20,7 @@ export default function App() {
       <Routes>
         {/* Redirect root to /dashboard */}
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        
 
         {/* All pages render inside the shared Layout */}
         <Route element={<Layout />}>
