@@ -1,0 +1,183 @@
+/* ══════════════════════════════════════════════════════
+   FloatingAIAssistant.css
+   Fixed orange FAB with pulse rings, hover scale, tooltip
+══════════════════════════════════════════════════════ */
+
+/* ── Button ──────────────────────────────────────────── */
+.fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  background: #FF6B00;
+  box-shadow:
+    0 4px 14px rgba(255, 107, 0, 0.45),
+    0 2px 6px  rgba(0, 0, 0, 0.18);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+
+  /* Fade-in state — starts invisible */
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease;
+}
+
+/* Visible state (set via JS after mount) */
+.fab--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hover */
+.fab:hover {
+  background: #E05A00;
+  transform: scale(1.1);
+  box-shadow:
+    0 8px 24px rgba(255, 107, 0, 0.55),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fab:active {
+  transform: scale(0.95);
+}
+
+/* Focus ring for keyboard nav */
+.fab:focus-visible {
+  outline: 3px solid rgba(255, 107, 0, 0.5);
+  outline-offset: 4px;
+}
+
+/* ── Icon ─────────────────────────────────────────────── */
+.fab__icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  animation: fabIconSpin 12s linear infinite;
+}
+
+@keyframes fabIconSpin {
+  0%   { transform: rotate(0deg);   }
+  45%  { transform: rotate(0deg);   }
+  50%  { transform: rotate(60deg);  }
+  95%  { transform: rotate(60deg);  }
+  100% { transform: rotate(0deg);   }
+}
+
+/* ── Pulse rings ──────────────────────────────────────── */
+.fab__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 107, 0, 0.6);
+  animation: fabPulse 3s ease-out infinite;
+  pointer-events: none;
+}
+
+.fab__ring--2 {
+  animation-delay: 1s;
+  border-color: rgba(255, 107, 0, 0.4);
+}
+
+@keyframes fabPulse {
+  0%   { transform: scale(1);    opacity: 0.8; }
+  70%  { transform: scale(1.55); opacity: 0;   }
+  100% { transform: scale(1.55); opacity: 0;   }
+}
+
+/* Pause pulse on hover — rings would conflict with scale */
+.fab:hover .fab__ring { animation-play-state: paused; }
+
+/* ── Tooltip ──────────────────────────────────────────── */
+.fab__tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  white-space: nowrap;
+  background: #1F2937;
+  color: #F9FAFB;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, sans-serif;
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  /* Hidden until hover */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-50%) translateX(4px);
+
+  /* Tail */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.fab__tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #1F2937;
+}
+
+.fab:hover .fab__tooltip,
+.fab:focus-visible .fab__tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .fab {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .fab__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Tooltip on mobile: show above instead of left */
+  .fab__tooltip {
+    right: auto;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    top: auto;
+    transform: translateX(-50%);
+  }
+
+  .fab__tooltip::after {
+    left: 50%;
+    top: 100%;
+    bottom: auto;
+    transform: translateX(-50%);
+    border-left-color: transparent;
+    border-top-color: #1F2937;
+  }
+
+  .fab:hover .fab__tooltip {
+    transform: translateX(-50%);
+  }
+}

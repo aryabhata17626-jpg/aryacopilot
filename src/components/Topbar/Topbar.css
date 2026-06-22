@@ -1,0 +1,117 @@
+/* ── Topbar ───────────────────────────────────────────── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 24px;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.topbar__title h2 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Actions row */
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search */
+.topbar__search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  transition: border-color 0.15s;
+}
+
+.topbar__search:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.08);
+}
+
+.topbar__search-icon {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.topbar__search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-text);
+  font-size: 0.8125rem;
+  width: 180px;
+}
+
+.topbar__search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Icon buttons */
+.topbar__icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: #FFFFFF;
+  color: var(--color-text-secondary);
+  font-size: 1.15rem;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.topbar__icon-btn:hover {
+  background: #F9FAFB;
+  border-color: var(--color-border-dark);
+  color: var(--color-text);
+}
+
+/* Notification badge */
+.topbar__badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #fff;
+}
+
+/* Profile button */
+.topbar__profile-btn {
+  font-size: 1.4rem;
+  color: var(--color-text-secondary);
+  border-color: transparent;
+  background: transparent;
+}
+
+.topbar__profile-btn:hover {
+  background: #F9FAFB;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}

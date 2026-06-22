@@ -1,0 +1,31 @@
+/* ── Layout shell ────────────────────────────────────── */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+/* The body area sits to the right of the fixed sidebar */
+.layout__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 240px;
+  min-height: 100vh;
+}
+
+/* Main content area */
+.layout__main {
+  flex: 1;
+  padding: 24px 28px;
+  color: var(--color-text);
+  overflow-y: auto;
+}
+
+/* ── Page heading defaults ────────────────────────────── */
+.layout__main h1 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 20px 0;
+}

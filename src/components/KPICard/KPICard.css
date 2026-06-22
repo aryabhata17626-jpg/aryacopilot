@@ -1,0 +1,82 @@
+/* ── KPI Card ─────────────────────────────────────────── */
+.kpi-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.kpi-card__label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.kpi-card__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kpi-card__value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+/* Change variant */
+.kpi-card__change {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.kpi-card__change--positive { color: #22C55E; }
+.kpi-card__change--negative { color: #EF4444; }
+
+/* Badge variant */
+.kpi-card__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+.kpi-card__badge--danger  { background: #FEE2E2; color: #DC2626; }
+.kpi-card__badge--warning { background: #FEF3C7; color: #D97706; }
+.kpi-card__badge--info    { background: #DBEAFE; color: #1D4ED8; }
+
+/* Progress variant */
+.kpi-card__progress-track {
+  height: 4px;
+  background: #F3F4F6;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.kpi-card__progress-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* Sub label (gauge/confidence) */
+.kpi-card__sub-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Circular gauge */
+.kpi-gauge {
+  flex-shrink: 0;
+}
