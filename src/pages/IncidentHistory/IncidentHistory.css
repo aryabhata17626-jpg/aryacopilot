@@ -1,0 +1,421 @@
+/* ══════════════════════════════════════════════════════
+   IncidentHistory.css
+   AryaCopilot Incident History Page
+══════════════════════════════════════════════════════ */
+
+.ih-page {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+.ih-page-hd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ih-page-hd__title {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 3px;
+}
+
+.ih-page-hd__sub {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ── KPI Row ─────────────────────────────────────────── */
+.ih-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+/* ── Search & Filter Bar ─────────────────────────────── */
+.ih-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 8px 14px;
+}
+
+.ih-search-input {
+  flex: 1;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  background: #FAFAFA;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.ih-search-input:focus {
+  border-color: var(--color-primary);
+  background: #FFFFFF;
+}
+
+.ih-search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.ih-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ih-filter-lbl {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ih-select {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: #FAFAFA;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.ih-select:focus {
+  border-color: var(--color-primary);
+}
+
+/* ── Main Layout ─────────────────────────────────────── */
+.ih-main {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 6px;
+}
+
+/* ── Shared Panel ────────────────────────────────────── */
+.ih-panel {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ih-panel__hd {
+  padding: 10px 14px;
+  background: #F9FAFB;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ih-panel__hd--primary {
+  background: var(--color-primary-light);
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.ih-panel__ttl {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Table Panel ─────────────────────────────────────── */
+.ih-table-body {
+  overflow-x: auto;
+}
+
+.ih-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ih-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.ih-table td {
+  padding: 12px 14px;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.ih-table tr:last-child td { border-bottom: none; }
+
+.ih-table tr:hover td { background: #FAFAFA; cursor: pointer; }
+
+.ih-id {
+  font-family: ui-monospace, Consolas, monospace;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.ih-sev-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.ih-sev-dot--crit { background: #EF4444; }
+.ih-sev-dot--warn { background: #F59E0B; }
+.ih-sev-dot--ok   { background: #22C55E; }
+
+.ih-sim {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ── AryaCopilot Memory Panel ────────────────────────── */
+.ih-memory-panel { margin-top: 14px; }
+
+.ih-memory-body {
+  padding: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.ih-memory-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ih-memory-txt {
+  flex: 1;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  border: 1px solid #FED7AA;
+  background: #FFF8F3;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.ih-highlight {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ── Right Panel Cards ───────────────────────────────── */
+.ih-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ih-details-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ih-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  padding: 4px 0;
+}
+
+.ih-detail-lbl {
+  color: var(--color-text-secondary);
+}
+
+.ih-detail-val {
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.ih-detail-val--prim { color: var(--color-primary); }
+.ih-detail-val--green { color: #22C55E; }
+
+/* ── Similar Incidents Card ──────────────────────────── */
+.ih-sim-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ih-sim-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+}
+
+.ih-sim-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ih-sim-id {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.ih-sim-status {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #22C55E;
+  text-transform: uppercase;
+}
+
+.ih-sim-pct {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ── Timeline Card ───────────────────────────────────── */
+.ih-tl-body {
+  padding: 16px 14px;
+}
+
+.ih-timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 6px;
+}
+
+.ih-timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.ih-tl-item {
+  position: relative;
+  padding-left: 18px;
+  padding-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ih-tl-item:last-child { padding-bottom: 0; }
+
+.ih-tl-dot {
+  position: absolute;
+  left: -4px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #D1D5DB;
+  border: 2px solid #FFFFFF;
+}
+
+.ih-tl-item--crit .ih-tl-dot { background: #EF4444; }
+.ih-tl-item--warn .ih-tl-dot { background: #F59E0B; }
+.ih-tl-item--prim .ih-tl-dot { background: var(--color-primary); }
+.ih-tl-item--ok .ih-tl-dot   { background: #22C55E; }
+
+.ih-tl-time {
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.ih-tl-msg {
+  font-size: 0.75rem;
+  color: var(--color-text);
+}
+
+.ih-tl-item--crit .ih-tl-msg { color: #EF4444; font-weight: 600; }
+.ih-tl-item--prim .ih-tl-msg { color: var(--color-primary); font-weight: 600; }
+.ih-tl-item--ok .ih-tl-msg   { color: #22C55E; font-weight: 600; }
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .ih-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ih-kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ih-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ih-filter-group {
+    justify-content: space-between;
+  }
+  .ih-kpi-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .ih-kpi-row {
+    grid-template-columns: 1fr;
+  }
+}

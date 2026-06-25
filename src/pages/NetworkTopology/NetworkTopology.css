@@ -7,7 +7,7 @@
 .nt-page {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 6px;
 }
 
 /* ── Page Header ─────────────────────────────────────── */
@@ -32,7 +32,7 @@
   color: var(--color-text-secondary);
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 6px;
 }
 
 .nt-hd__live {
@@ -60,14 +60,14 @@
 .nt-kpi-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 6px;
 }
 
 /* ── Main Grid ───────────────────────────────────────── */
 .nt-main {
   display: grid;
   grid-template-columns: 1fr 272px;
-  gap: 14px;
+  gap: 6px;
   align-items: start;
 }
 
@@ -149,7 +149,7 @@
   left: 12px;
   z-index: 10;
   display: flex;
-  gap: 12px;
+  gap: 6px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -319,7 +319,7 @@
 .nt-rhs {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
 
 /* ── Device Inspector ────────────────────────────────── */
@@ -383,7 +383,7 @@
 .insp-metric {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .insp-metric__lbl {
@@ -431,7 +431,7 @@
 
 .insp-row-pair {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .insp-pair {
@@ -556,7 +556,7 @@
 .nt-bot {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 6px;
 }
 
 /* Shared panel base */
@@ -572,10 +572,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 11px 16px;
+  padding: 8px 12px;
   border-bottom: 1px solid var(--color-border);
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .nt-panel__ttl {
@@ -586,10 +586,10 @@
 }
 
 .nt-panel__body {
-  padding: 14px 16px;
+  padding: 10px 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
 
 /* ── Route Explorer ──────────────────────────────────── */
@@ -686,7 +686,7 @@
 .ev-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   padding: 10px 16px;
   border-bottom: 1px solid #F3F4F6;
   cursor: pointer;
@@ -735,7 +735,7 @@
 @media (max-width: 1024px) {
   .nt-kpi-row { grid-template-columns: repeat(2, 1fr); }
   .nt-main    { grid-template-columns: 1fr; }
-  .nt-rhs     { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .nt-rhs     { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 }
 
 @media (max-width: 768px) {
@@ -744,7 +744,7 @@
 }
 
 @media (max-width: 640px) {
-  .nt-kpi-row  { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .nt-kpi-row  { grid-template-columns: 1fr 1fr; gap: 6px; }
   .topo-canvas { height: 360px; }
   .nt-hd__sub  { flex-direction: column; align-items: flex-start; gap: 4px; }
 }

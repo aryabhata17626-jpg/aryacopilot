@@ -17,7 +17,7 @@
 /* Main content area */
 .layout__main {
   flex: 1;
-  padding: 24px 28px;
+  padding: 12px 16px;
   color: var(--color-text);
   overflow-y: auto;
 }

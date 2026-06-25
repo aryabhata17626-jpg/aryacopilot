@@ -7,8 +7,7 @@
 .aia-page {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  height: 100%;
+  gap: 6px;
 }
 
 /* ── Page Header ─────────────────────────────────────── */
@@ -17,7 +16,7 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .aia-page-hd__title {
@@ -104,18 +103,16 @@
 .aia-grid {
   display: grid;
   grid-template-columns: 194px 1fr 238px;
-  gap: 12px;
+  gap: 6px;
   flex: 1;
   min-height: 0;
-  height: calc(100vh - 270px);
 }
 
 .aia-left,
 .aia-right {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  overflow-y: auto;
+  gap: 6px;
 }
 
 /* ── Shared Panel ────────────────────────────────────── */
@@ -275,7 +272,7 @@
 .aia-center {
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  min-height: 500px;
   border: 2px solid var(--color-primary);
   border-radius: var(--radius-md);
   background: #FFFFFF;
@@ -287,7 +284,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 6px;
   padding: 10px 14px;
   background: #1F2937;
   border-bottom: 1px solid #374151;
@@ -298,7 +295,7 @@
 .aia-chat-hd__left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
 }
 
 .aia-chat-hd__icon {
@@ -322,7 +319,7 @@
 
 .aia-chat-hd__meta {
   display: flex;
-  gap: 12px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
@@ -355,14 +352,14 @@
   padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
   min-height: 0;
 }
 
 /* ── Message Bubbles ─────────────────────────────────── */
 .aia-msg {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   align-items: flex-start;
 }
 
@@ -387,7 +384,7 @@
 
 /* Bubble */
 .aia-msg__bubble {
-  max-width: 80%;
+  /* max-width removed */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
@@ -567,7 +564,7 @@
 .aia-risk__row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .aia-risk__from {
@@ -753,7 +750,7 @@
 .aia-input-bar {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   padding: 9px 11px;
   border-top: 1px solid var(--color-border);
   background: #FFFFFF;
@@ -858,7 +855,7 @@
   padding: 10px 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .aia-metric { display: flex; flex-direction: column; gap: 4px; }
@@ -902,7 +899,7 @@
 .aia-rec-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   border: 1px solid var(--color-border);
   background: #FFFFFF;
   color: var(--color-text);
@@ -952,7 +949,7 @@
 .aia-conf__detail {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-size: 0.62rem;
   color: var(--color-text-muted);
 }
@@ -979,25 +976,25 @@
 /* ══════════════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════════════ */
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
   .aia-grid { grid-template-columns: 176px 1fr 218px; }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .aia-grid {
     grid-template-columns: 1fr 1fr;
     height: auto;
   }
   .aia-left   { grid-column: 1; grid-row: 2; flex-direction: row; flex-wrap: wrap; }
   .aia-left > * { flex: 1; min-width: 150px; }
-  .aia-center { grid-column: 1 / span 2; grid-row: 1; height: 55vh; }
+  .aia-center { grid-column: 1 / span 2; grid-row: 1; }
   .aia-right  { grid-column: 2; grid-row: 2; }
 }
 
 @media (max-width: 768px) {
   .aia-grid   { grid-template-columns: 1fr; }
   .aia-left, .aia-center, .aia-right { grid-column: 1; grid-row: auto; }
-  .aia-center { height: 60vh; }
+
   .aia-statusbar { flex-wrap: wrap; }
   .aia-stat   { min-width: 110px; }
   .aia-signals { grid-template-columns: 1fr; }

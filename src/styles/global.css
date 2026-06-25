@@ -1,5 +1,5 @@
 /* ── Global Reset & Base ─────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 
 *,
 *::before,
@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #F3F4F6;
-  color: #111827;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,7 +29,7 @@ body {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #F3F4F6;
+  background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
   background: #D1D5DB;
@@ -56,16 +56,16 @@ ul, ol {
 /* ── Design Tokens ───────────────────────────────────── */
 :root {
   --color-primary:        #FF6B00;
-  --color-primary-light:  #FFF3E8;
-  --color-primary-dark:   #E05A00;
+  --color-primary-light:  #FFE8D5;
+  --color-primary-dark:   #FF8C42;
 
-  --color-bg:             #F3F4F6;
+  --color-bg:             #FFF7F0;
   --color-surface:        #FFFFFF;
 
   --color-border:         #E5E7EB;
   --color-border-dark:    #D1D5DB;
 
-  --color-text:           #111827;
+  --color-text:           #1F2937;
   --color-text-secondary: #6B7280;
   --color-text-muted:     #9CA3AF;
 

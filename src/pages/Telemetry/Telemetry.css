@@ -1,0 +1,736 @@
+/* ══════════════════════════════════════════════════════
+   Telemetry.css — AryaCopilot Telemetry Explorer
+   Design System: white / #FF6B00 enterprise — same as Dashboard
+══════════════════════════════════════════════════════ */
+
+/* ── Page Shell ──────────────────────────────────────── */
+.tel-page {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Page Header ─────────────────────────────────────── */
+.tel-page-hd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tel-page-hd__title {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 3px;
+}
+
+.tel-page-hd__sub {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.tel-hd-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tel-chip {
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  border: 1px solid var(--color-border);
+  background: #FFFFFF;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.tel-chip--time   { background: #EFF6FF; color: #1D4ED8; border-color: #BFDBFE; }
+.tel-chip--status { background: #D1FAE5; color: #065F46; border-color: #A7F3D0; }
+.tel-chip--health { background: var(--color-primary-light); color: var(--color-primary); border-color: #FED7AA; }
+
+/* ── KPI Row ─────────────────────────────────────────── */
+.tel-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+/* ── Control Bar ─────────────────────────────────────── */
+.tel-ctrl-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 8px 14px;
+}
+
+.tel-ctrl-bar__left,
+.tel-ctrl-bar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.tel-ctrl-group {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tel-ctrl-lbl {
+  font-size: 0.575rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tel-ctrl-val {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tel-ctrl-select {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--color-text);
+  background: #F9FAFB;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+
+.tel-ctrl-select:focus { border-color: var(--color-primary); }
+
+.tel-time-btns {
+  display: flex;
+  gap: 3px;
+}
+
+.tel-time-btn {
+  border: 1px solid var(--color-border);
+  background: #FFFFFF;
+  color: var(--color-text-secondary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.tel-time-btn:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.tel-time-btn--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.tel-time-btn--active:hover {
+  background: var(--color-primary-dark);
+  color: #FFFFFF;
+}
+
+.tel-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.75; }
+}
+
+/* ══════════════════════════════════════════════════════
+   Shared Panel Base
+══════════════════════════════════════════════════════ */
+.tel-panel {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.tel-panel__hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tel-panel__hd--dark {
+  background: #1F2937;
+  border-bottom-color: #374151;
+}
+
+.tel-panel__ttl {
+  font-size: 0.6375rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.tel-panel__ttl--light { color: #F9FAFB; }
+
+/* ══════════════════════════════════════════════════════
+   Telemetry Chart
+══════════════════════════════════════════════════════ */
+.tel-chart-panel { flex-shrink: 0; }
+
+.tel-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tel-leg-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.tel-leg-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tel-chart-body {
+  padding: 12px 14px 10px;
+  background: #FAFAFA;
+}
+
+.tel-chart-tip {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.tel-chart-tip__lbl {
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  font-size: 0.72rem;
+}
+
+.tel-chart-tip__row {
+  color: var(--color-text-secondary);
+  margin: 1px 0;
+  font-size: 0.7rem;
+}
+
+/* ══════════════════════════════════════════════════════
+   Middle Row
+══════════════════════════════════════════════════════ */
+.tel-mid-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 220px;
+  gap: 6px;
+}
+
+/* ── Device Telemetry ────────────────────────────────── */
+.tel-health-badge {
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.575rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.tel-health-badge--ok {
+  background: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+.tel-health-badge--warn {
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FDE68A;
+}
+
+.tel-device-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.tel-dev-row { display: flex; flex-direction: column; gap: 4px; }
+
+.tel-dev-row__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tel-dev-row__lbl {
+  font-size: 0.73rem;
+  color: var(--color-text-secondary);
+}
+
+.tel-dev-row__val {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tel-dev-row__val--crit  { color: #DC2626; }
+.tel-dev-row__val--warn  { color: #D97706; }
+.tel-dev-row__val--ok    { color: #16A34A; }
+
+.tel-dev-track {
+  height: 4px;
+  background: #F3F4F6;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.tel-dev-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.6s ease;
+}
+
+.tel-dev-fill--crit { background: #EF4444; }
+.tel-dev-fill--warn { background: #F59E0B; }
+.tel-dev-fill--ok   { background: #22C55E; }
+
+/* ── NetFlow Table ───────────────────────────────────── */
+.tel-nf-body {
+  overflow-x: auto;
+}
+
+.tel-nf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.tel-nf-table thead tr {
+  background: #F9FAFB;
+}
+
+.tel-nf-table th {
+  padding: 7px 10px;
+  text-align: left;
+  font-size: 0.575rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.tel-nf-table td {
+  padding: 7px 10px;
+  color: var(--color-text);
+  border-bottom: 1px solid #F9FAFB;
+  font-size: 0.76rem;
+}
+
+.tel-nf-table tr:last-child td { border-bottom: none; }
+
+.tel-nf-table tr:hover td { background: #FAFAFA; }
+
+.tel-nf-mono {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.72rem !important;
+  color: var(--color-text-secondary) !important;
+}
+
+.tel-proto {
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.tel-proto--tcp  { background: #EFF6FF; color: #1D4ED8; }
+.tel-proto--udp  { background: #FEF3C7; color: #B45309; }
+.tel-proto--icmp { background: #F0FDF4; color: #15803D; }
+
+.tel-app-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.73rem;
+  cursor: pointer;
+}
+
+.tel-app-link:hover { text-decoration: underline; }
+
+/* ── Protocol Health ─────────────────────────────────── */
+.tel-proto-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tel-proto-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.tel-proto-card__hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background: #F9FAFB;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tel-proto-card__name {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.tel-status-badge {
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.tel-status-badge--ok   { background: #D1FAE5; color: #065F46; }
+.tel-status-badge--warn { background: #FEF3C7; color: #B45309; }
+.tel-status-badge--crit { background: #FEE2E2; color: #DC2626; }
+
+.tel-proto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 6px 10px;
+}
+
+.tel-proto-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 3px 0;
+}
+
+.tel-pg-lbl {
+  font-size: 0.525rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.tel-pg-val {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ══════════════════════════════════════════════════════
+   Bottom Row
+══════════════════════════════════════════════════════ */
+.tel-bot-row {
+  display: grid;
+  grid-template-columns: 1fr 280px 280px;
+  gap: 6px;
+}
+
+/* ── Syslog Panel ────────────────────────────────────── */
+.tel-log-panel { display: flex; flex-direction: column; }
+
+.tel-rec-badge {
+  font-size: 0.575rem;
+  font-weight: 700;
+  color: #EF4444;
+  letter-spacing: 0.5px;
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+
+.tel-log-body {
+  background: #111827;
+  flex: 1;
+  min-height: 180px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: ui-monospace, Consolas, monospace;
+}
+
+.tel-log-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.tel-log__ts {
+  color: #6B7280;
+  flex-shrink: 0;
+  font-size: 0.65rem;
+}
+
+.tel-log__sev {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+.tel-log__sev--crit { background: #450A0A; color: #FCA5A5; }
+.tel-log__sev--warn { background: #422006; color: #FCD34D; }
+.tel-log__sev--info { background: #1E3A5F; color: #93C5FD; }
+
+.tel-log__msg {
+  color: #D1D5DB;
+  flex: 1;
+  font-size: 0.7rem;
+}
+
+/* ── Adaptive Engine ─────────────────────────────────── */
+.tel-adapt-panel { display: flex; flex-direction: column; }
+
+.tel-adapt-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.tel-adapt-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.tel-adapt-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 7px 9px;
+  background: #F9FAFB;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.tel-adapt-stat__lbl {
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tel-adapt-stat__val {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.tel-adapt-stat__val--prim  { color: var(--color-primary); }
+.tel-adapt-stat__val--green { color: #22C55E; }
+
+.tel-adapt-rec {
+  font-size: 0.775rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  background: var(--color-primary-light);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 8px 10px;
+}
+
+.tel-adapt-cta {
+  width: 100%;
+  padding: 10px;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.tel-adapt-cta:hover:not(:disabled) { background: var(--color-primary-dark); }
+
+.tel-adapt-cta--accepted {
+  background: #22C55E;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.tel-adapt-cta:disabled { cursor: not-allowed; }
+
+/* ── AI Insights ─────────────────────────────────────── */
+.tel-ai-panel { display: flex; flex-direction: column; }
+
+.tel-ai-body {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tel-ai-item {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.tel-ai-item__num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.tel-ai-item__content { flex: 1; }
+
+.tel-ai-item__title {
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 3px;
+}
+
+.tel-ai-item__body {
+  font-size: 0.73rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════
+   Responsive
+══════════════════════════════════════════════════════ */
+@media (max-width: 1440px) {
+  .tel-mid-row {
+    grid-template-columns: 190px 1fr 200px;
+  }
+  .tel-bot-row {
+    grid-template-columns: 1fr 260px 260px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .tel-mid-row {
+    grid-template-columns: 180px 1fr;
+  }
+  .tel-mid-row > .tel-panel:last-child {
+    grid-column: 1 / -1;
+  }
+  .tel-bot-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tel-bot-row .tel-log-panel {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tel-kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tel-mid-row {
+    grid-template-columns: 1fr;
+  }
+  .tel-mid-row > .tel-panel:last-child {
+    grid-column: auto;
+  }
+  .tel-bot-row {
+    grid-template-columns: 1fr;
+  }
+  .tel-bot-row .tel-log-panel {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .tel-page { gap: 6px; }
+  .tel-kpi-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .tel-ctrl-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 430px) {
+  .tel-kpi-row { grid-template-columns: 1fr; }
+}
