@@ -1,16 +1,127 @@
-# React + Vite
+# AryaCopilot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-Powered Air-Gapped Network Operations Co-Pilot
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+AryaCopilot is a network intelligence platform developed for the ISRO Hackathon problem statement:
 
-## React Compiler
+**Air-Gap Predictive Co-Pilot for Secure MPLS Operations**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The system provides:
 
-## Expanding the ESLint configuration
+- Network Topology Visualization
+- Failure Prediction
+- Root Cause Analysis
+- Incident History Analysis
+- Knowledge Base (Offline RAG)
+- Telemetry Explorer
+- Logs Explorer
+- Alerts Center
+- Reports Dashboard
+- AI Assistant
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+### Dashboard
+Real-time overview of network health, active alerts, and system status.
+
+### Network Topology
+Interactive digital twin visualization of routers, links, and traffic paths.
+
+### Failure Prediction
+Predicts upcoming failures using AI-based forecasting models.
+
+### Root Cause Analysis
+Identifies probable causes of incidents using event correlation.
+
+### Knowledge Base
+Offline Retrieval-Augmented Generation (RAG) system for runbooks, playbooks, configurations, and topology documents.
+
+### Incident History
+Historical incident tracking and similarity analysis.
+
+### Telemetry Explorer
+Live monitoring of CPU, Memory, Queue Depth, Temperature, and Network Metrics.
+
+### Logs Explorer
+Real-time Syslog and Event Analysis.
+
+### Alerts Center
+Alert prioritization and mitigation recommendations.
+
+### Reports
+Operational reports and analytics export center.
+
+### AI Assistant
+Context-aware network operations assistant.
+
+---
+
+## Technology Stack
+
+### Frontend
+- React JS
+- Vite
+- React Router
+- CSS3
+
+### Design
+- Figma
+- Responsive Dashboard UI
+
+### AI Concepts
+- Predictive Analytics
+- Root Cause Analysis
+- Event Correlation
+- Offline RAG
+- Explainable AI
+
+---
+
+## Installation
+
+```bash
+npm install
+```
+
+## Run Development Server
+
+```bash
+npm run dev
+```
+
+## Build Project
+
+```bash
+npm run build
+```
+
+## Deployment
+
+- GitHub
+- Vercel
+
+---
+
+## Team
+
+### Sorcery
+Frontend Development & UI Implementation
+
+### Salman
+Presentation & Demo Preparation
+
+### KK
+Architecture, Research, Models, Documentation
+
+### DK
+Simulation, Dataset Preparation, Network Analysis
+
+---
+
+## Project Status
+
+Under Active Development
